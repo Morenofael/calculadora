@@ -12,10 +12,12 @@ function addNumberToDisplay(num){
     displayValue+=num;
     display.textContent = displayValue;
 }
-
 let numA;
 let operator;
 let numB;
 let displayValue = "";
 
 const display = document.getElementById("display");
+const nums = document.querySelectorAll(".num");
+nums.forEach(num => num.addEventListener("click",()=>addNumberToDisplay(num.textContent)));
+
