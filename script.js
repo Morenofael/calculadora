@@ -8,7 +8,14 @@ const operate = function(numA,operator,numB){
     else if(operator=="*") return multiply(numA,numB);
     else if(operator=="/") return divide(numA,numB);
 }
+function addNumberToDisplay(num){
+    displayValue+=num;
+    display.textContent = displayValue;
+}
+
 let numA;
 let operator;
 let numB;
-let displayValue;
+let displayValue = "";
+
+const display = document.getElementById("display");
