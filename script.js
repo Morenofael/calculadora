@@ -8,16 +8,25 @@ const operate = function(numA,operator,numB){
     else if(operator=="*") return multiply(numA,numB);
     else if(operator=="/") return divide(numA,numB);
 }
-function addNumberToDisplay(num){
-    displayValue+=num;
-    display.textContent = displayValue;
-}
 let numA;
 let operator;
 let numB;
 let displayValue = "";
 
+function addNumberToDisplay(num){
+    displayValue+=num;
+    display.textContent = displayValue;
+}
+function setOperator(op){
+    operator = op;
+    numA = displayValue;
+    displayValue = "";
+    display.textContent = displayValue;
+}
+
 const display = document.getElementById("display");
 const nums = document.querySelectorAll(".num");
 nums.forEach(num => num.addEventListener("click",()=>addNumberToDisplay(num.textContent)));
+const ops = document.querySelectorAll(".op");
+ops.forEach(op => op.addEventListener("click",()=>setOperator(op.textContent)));
 
