@@ -20,13 +20,16 @@ function addNumberToDisplay(num){
 function setOperator(op){
     operator = op;
     numA = displayValue;
+    clearDisplay();
+}
+function clearDisplay(){
     displayValue = "";
     display.textContent = displayValue;
 }
-
 const display = document.getElementById("display");
 const nums = document.querySelectorAll(".num");
 nums.forEach(num => num.addEventListener("click",()=>addNumberToDisplay(num.textContent)));
 const ops = document.querySelectorAll(".op");
 ops.forEach(op => op.addEventListener("click",()=>setOperator(op.textContent)));
-
+const ce = document.querySelector(".clear");
+ce.addEventListener("click",()=>clearDisplay());
